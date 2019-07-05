@@ -25,7 +25,7 @@ const MenuRoutes = {
 };
 
 const MenuConfig = {
-  initialRouteName: 'Main',
+  initialRouteName: 'List',
   tabBarOptions: {
     activeBackgroundColor: '#fff',
     inactiveBackgroundColor: '#08f',
