@@ -1,12 +1,13 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
 import Item from '~/components/Item';
+import ItemTitle from '~/components/ListTitle';
 
 export default function List() {
   return (
     <View style={styles.container}>
-      <Text>Lista!</Text>
+      <ItemTitle />
       <Item baseForm="be" simplePast="was, were" pastParticiple="been" />
     </View>
   );
