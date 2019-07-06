@@ -1,14 +1,21 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, FlatList } from 'react-native';
 
 import Item from '~/components/Item';
 import ItemTitle from '~/components/ListTitle';
+
+import data from '~/assets/list_irreguar_verbs';
 
 export default function List() {
   return (
     <View style={styles.container}>
       <ItemTitle />
-      <Item baseForm="be" simplePast="was, were" pastParticiple="been" />
+
+      <FlatList
+        data={data}
+        keyExtractor={item => `${item.baseForm}`}
+        renderItem={({ item }) => (<Item {...item} />)}
+      />
     </View>
   );
 }
