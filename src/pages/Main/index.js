@@ -1,13 +1,17 @@
 import React from 'react';
 import {
-  View, Text, StyleSheet,
+  View, Text, StyleSheet, TouchableOpacity,
 } from 'react-native';
 
-const Main = () => (
-  <View style={styles.container}>
-    <Text>Main</Text>
-  </View>
-);
+export default function Main(props) {
+  return (
+    <View style={styles.container}>
+      <TouchableOpacity onPress={() => props.navigation.navigate('Quiz')}>
+        <Text>Start Quiz</Text>
+      </TouchableOpacity>
+    </View>
+  );
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -16,5 +20,3 @@ const styles = StyleSheet.create({
     backgroundColor: '#ddd',
   },
 });
-
-export default Main;

@@ -1,14 +1,35 @@
 import React from 'react';
-import { createAppContainer, createBottomTabNavigator } from 'react-navigation';
+import { createAppContainer, createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
 import Main from '~/pages/Main';
 import List from '~/pages/List';
+import Quiz from '~/pages/Quiz';
+
+const homeQuiz = createStackNavigator(
+  {
+    Home: {
+      screen: Main,
+      navigationOptions: {
+        header: null,
+      },
+    },
+    Quiz: {
+      screen: Quiz,
+      navigationOptions: {
+        title: 'Quiz',
+      },
+    },
+  },
+  {
+    initialRouteName: 'Home',
+  },
+);
 
 const MenuRoutes = {
   Main: {
     name: 'Inicio',
-    screen: Main,
+    screen: homeQuiz,
     navigationOptions: {
       title: 'início',
       tabBarIcon: ({ tintColor }) => <Icon name="home" size={18} color={tintColor} />,
