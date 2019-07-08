@@ -15,7 +15,7 @@ const homeQuiz = createStackNavigator(
       },
     },
     Quiz: {
-      screen: Quiz,
+      screen: props => <Quiz {...props} />,
       navigationOptions: {
         title: 'Quiz',
       },
@@ -28,7 +28,6 @@ const homeQuiz = createStackNavigator(
 
 const MenuRoutes = {
   Main: {
-    name: 'Inicio',
     screen: homeQuiz,
     navigationOptions: {
       title: 'início',
@@ -36,7 +35,6 @@ const MenuRoutes = {
     },
   },
   List: {
-    name: 'List',
     screen: List,
     navigationOptions: {
       title: 'lista',
@@ -46,7 +44,7 @@ const MenuRoutes = {
 };
 
 const MenuConfig = {
-  initialRouteName: 'List',
+  initialRouteName: 'Main',
   tabBarOptions: {
     activeBackgroundColor: '#fff',
     inactiveBackgroundColor: '#08f',
