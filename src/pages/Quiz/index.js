@@ -1,12 +1,29 @@
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, FlatList, StyleSheet } from 'react-native';
+
+import data from '~/assets/list_irreguar_verbs';
+
+import Item from '~/components/Item';
 
 export default function Quiz({ navigation }) {
-  const questions = navigation.getParam('questions', '10');
+  const [questions, setQuestions] = useState([]);
+
+  useEffect(() => {
+    const qtd = navigation.getParam('questions', '10');
+    const sorted = new Set();
+    while (sorted.size < qtd) {
+      sorted.add(data[Math.floor(Math.random() * data.length)]);
+    }
+    setQuestions(Array.from(sorted));
+  }, []);
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>{questions}</Text>
+      <FlatList
+        data={questions}
+        keyExtractor={item => `${item.baseForm}`}
+        renderItem={({ item }) => (<Item {...item} />)}
+      />
     </View>
   );
 }

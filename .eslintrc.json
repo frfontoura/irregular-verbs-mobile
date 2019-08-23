@@ -34,7 +34,8 @@
     "no-use-before-define": [
       "error",
       { "functions": false, "classes": false, "variables": false }
-    ]
+    ],
+    "no-plusplus": [2, { "allowForLoopAfterthoughts": true }]
   },
   "settings": {
     "import/resolver": {
