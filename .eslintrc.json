@@ -35,7 +35,8 @@
       "error",
       { "functions": false, "classes": false, "variables": false }
     ],
-    "no-plusplus": [2, { "allowForLoopAfterthoughts": true }]
+    "no-plusplus": [2, { "allowForLoopAfterthoughts": true }],
+    "dot-notation": "off"
   },
   "settings": {
     "import/resolver": {
