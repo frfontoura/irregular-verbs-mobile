@@ -115,5 +115,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     marginTop: 10,
     marginBottom: 10,
+    borderRadius: 3,
   },
 });

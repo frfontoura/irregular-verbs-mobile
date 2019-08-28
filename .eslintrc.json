@@ -35,8 +35,9 @@
       "error",
       { "functions": false, "classes": false, "variables": false }
     ],
-    "no-plusplus": [2, { "allowForLoopAfterthoughts": true }],
-    "dot-notation": "off"
+    "no-plusplus": "off",
+    "dot-notation": "off",
+    "no-param-reassign": ["error", { "props": false }]
   },
   "settings": {
     "import/resolver": {
