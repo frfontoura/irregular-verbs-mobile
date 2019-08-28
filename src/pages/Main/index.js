@@ -10,6 +10,10 @@ export default function Main(props) {
       <View style={styles.iconContainer}>
         <Icon name="question-circle" size={130} color="#08f" />
       </View>
+      <TouchableOpacity style={styles.button} onPress={() => props.navigation.navigate('Quiz', { questions: 1 })}>
+        <Icon name="stream" size={14} color="#08f" />
+        <Text style={styles.buttonText}>Start Quiz - 1 word</Text>
+      </TouchableOpacity>
       <TouchableOpacity style={styles.button} onPress={() => props.navigation.navigate('Quiz', { questions: 10 })}>
         <Icon name="stream" size={14} color="#08f" />
         <Text style={styles.buttonText}>Start Quiz - 10 words</Text>

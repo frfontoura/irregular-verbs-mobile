@@ -11,7 +11,6 @@ export default function Quiz({ navigation }) {
   const [number, setNumber] = useState(0);
   const [simplePast, setSimplePast] = useState();
   const [pastParticiple, setPastParticiple] = useState();
-  const [showResult, setShowResult] = useState(false);
 
   useEffect(() => {
     const qtd = navigation.getParam('questions', '10');
@@ -25,6 +24,12 @@ export default function Quiz({ navigation }) {
   useEffect(() => {
     setQuestion(questions[number]);
   }, [questions, number]);
+
+  useEffect(() => {
+    if (number === questions.length && number > 0) {
+      navigation.navigate('Result', { questions });
+    }
+  }, [number]);
 
   function nextQuestion() {
     if (number < questions.length) {
@@ -40,8 +45,6 @@ export default function Quiz({ navigation }) {
       setNumber(number + 1);
       setPastParticiple();
       setSimplePast();
-    } else {
-      setShowResult(true);
     }
   }
 
@@ -63,7 +66,11 @@ export default function Quiz({ navigation }) {
         />
       </View>
 
-      <TouchableOpacity style={styles.button} onPress={() => nextQuestion()} disabled={!simplePast && !pastParticiple}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => nextQuestion()}
+        disabled={!simplePast && !pastParticiple}
+      >
         <Text style={styles.buttonText}>Next</Text>
       </TouchableOpacity>
     </View>
