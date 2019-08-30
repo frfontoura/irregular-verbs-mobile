@@ -6,6 +6,7 @@ import Main from '~/pages/Main';
 import List from '~/pages/List';
 import Quiz from '~/pages/Quiz';
 import Result from '~/pages/Result';
+import commonStyles from '~/utils/commonStyles';
 
 const homeQuiz = createStackNavigator(
   {
@@ -54,10 +55,10 @@ const MenuRoutes = {
 const MenuConfig = {
   initialRouteName: 'Main',
   tabBarOptions: {
-    activeBackgroundColor: '#fff',
-    inactiveBackgroundColor: '#08f',
-    activeTintColor: '#08f',
-    inactiveTintColor: '#fff',
+    activeBackgroundColor: commonStyles.colors.activeBackground,
+    inactiveBackgroundColor: commonStyles.colors.inactiveBackground,
+    activeTintColor: commonStyles.colors.activeTint,
+    inactiveTintColor: commonStyles.colors.inactiveTint,
   },
 };
 

@@ -3,6 +3,7 @@ import {
   View, Text, TouchableOpacity, StyleSheet, TextInput,
 } from 'react-native';
 
+import commonStyles from '~/utils/commonStyles';
 import data from '~/assets/list_irreguar_verbs';
 
 export default function Quiz({ navigation }) {
@@ -83,7 +84,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'stretch',
     paddingHorizontal: 20,
-    backgroundColor: '#000',
+    backgroundColor: commonStyles.colors.containerBackground,
   },
   questionContainer: {
     flex: 1,
@@ -100,7 +101,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     padding: 15,
     borderRadius: 3,
-    backgroundColor: '#fff',
+    backgroundColor: commonStyles.colors.buttonBackgroundPrimary,
     marginBottom: 15,
     alignItems: 'center',
     justifyContent: 'center',

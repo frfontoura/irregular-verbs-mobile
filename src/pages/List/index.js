@@ -3,6 +3,7 @@ import { View, StyleSheet, FlatList } from 'react-native';
 
 import Item from '~/components/Item';
 import ListTitle from '~/components/ListTitle';
+import commonStyles from '~/utils/commonStyles';
 
 import data from '~/assets/list_irreguar_verbs';
 
@@ -24,6 +25,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal: 10,
-    backgroundColor: '#000',
+    backgroundColor: commonStyles.colors.containerBackground,
   },
 });

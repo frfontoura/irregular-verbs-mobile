@@ -5,6 +5,7 @@ import {
 
 import ItemAnswer from '~/components/ItemAnswer';
 import ListTitle from '~/components/ListTitle';
+import commonStyles from '~/utils/commonStyles';
 
 export default function Result({ navigation }) {
   const [questions, setQuestions] = useState([]);
@@ -54,7 +55,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'stretch',
     paddingHorizontal: 20,
-    backgroundColor: '#000',
+    backgroundColor: commonStyles.colors.containerBackground,
   },
   text: {
     color: '#fff',

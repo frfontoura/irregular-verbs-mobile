@@ -4,11 +4,13 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
+import commonStyles from '~/utils/commonStyles';
+
 export default function Main(props) {
   return (
     <View style={styles.container}>
       <View style={styles.iconContainer}>
-        <Icon name="question-circle" size={130} color="#08f" />
+        <Icon name="question-circle" size={130} color={commonStyles.colors.questionIcon} />
       </View>
       <TouchableOpacity style={styles.button} onPress={() => props.navigation.navigate('Quiz', { questions: 1 })}>
         <Icon name="stream" size={14} color="#08f" />
@@ -34,7 +36,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal: 20,
-    backgroundColor: '#000',
+    backgroundColor: commonStyles.colors.containerBackground,
     justifyContent: 'center',
     alignItems: 'stretch',
   },
@@ -42,7 +44,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     padding: 15,
     borderRadius: 3,
-    backgroundColor: '#fff',
+    backgroundColor: commonStyles.colors.buttonBackgroundPrimary,
     marginBottom: 15,
     alignItems: 'center',
     justifyContent: 'center',
